@@ -2,7 +2,7 @@
 
 ## Objetivo principal
 
-O objetivo princpal do mapeamento é definir um ou mais campos a partir de um outro. Isso é feito através da criação de regras, onde para cada entrada, é definida uma resposta especifica. 
+O objetivo principal do mapeamento é estabelecer um ou mais campos (resposta) com base em outro campo existente (entrada). Isso é realizado por meio da criação de regras, nas quais, para cada entrada, é atribuída uma resposta específica.
 
 Cada nó contém uma validação, que caso seja verdadeira a resposta daquele nó é retornada.
 
@@ -93,7 +93,7 @@ Se deseja salvar uma configuração de teste para uso futuro, clique em "Salvar"
 Na nova aba aberta, defina um nome para identificar seu teste. O campo "Valor esperado" deve conter o resultado esperado para a configuração atual, sendo essencial para validar o sucesso do teste. Após preencher, clique em "Salvar" para armazenar o teste.
 
 Em seguida, vá para a aba "Teste". Você pode:
-- Clicar no botão de check para rodar um teste unitário.
+- Selecionar um dos testes e clicar no botão de check para rodar um teste unitário.
 - Clicar no botão de double-check para executar todos os testes salvos.
 
 <img width=800 src="./images/abaTeste.png" />
@@ -206,5 +206,3 @@ Se um teste na aba "Teste" retornar "success": false, e este mesmo cenário for 
 <img width=700 src="./images/successTrue.png" />
 
 Nesse caso, o "outputValue" exibirá o resultado do último nó processado com sucesso.
-
-
