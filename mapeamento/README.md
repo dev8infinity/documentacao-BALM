@@ -2,13 +2,15 @@
 
 ## Objetivo principal
 
-O objetivo principal do mapeamento é estabelecer um ou mais campos (resposta) com base em outro campo existente (entrada). Isso é realizado por meio da criação de regras, nas quais, para cada entrada, é atribuída uma resposta específica.
+O principal objetivo do mapeamento é determinar uma resposta para cada entrada por meio de um processo de validação. Essa validação ocorre por meio da criação de regras, onde cada entrada recebe uma resposta específica.
 
 Cada nó contém uma validação, que caso seja verdadeira a resposta daquele nó é retornada.
 
 Veja o exemplo abaixo:
 
 <img width=600 src="./images/fluxo.png" />
+
+*para enteder oque é um OU EXCLUSIVO, ver seção [operadores](#Operadores)*
 
 O exemplo do mapeamento apresentado na imagem estabelece regras de decisão para determinar a maioridade de uma pessoa com base no contexto (Brasil ou EUA) e na idade informada. O diagrama segue um fluxo estruturado em dois níveis de decisão:
 
@@ -49,7 +51,7 @@ Neste exemplo, a resposta é um texto. No entanto, existem outros tipos de saíd
 - Caracteres/Texto
 - Número
 - Data
-- Objeto
+- Objeto (ou JSON)
 
 Os tipos mencionados acima são utilizados quando é necessário definir um valor fixo para a resposta. No entanto, caso seja preciso que o valor seja variável, é possível utilizar uma propriedade do BALM.
 
@@ -64,9 +66,28 @@ Em cada nível, você seleciona o operador desejado. Os operadores disponíveis 
 - AND (E): Utiliza a resposta deste nó somente se ele e todos os anteriores no mesmo nível forem verdadeiros.
 - OR (OU): Utiliza a resposta do primeiro nó que for verdadeiro no mesmo nível.
 
+Suponha que você tenha um sistema de login com dois métodos: reconhecimento facial e senha. Veja como estes operadores se comportaria:
+- XOR: o usuário só pode entrar se apenas um dos métodos for bem-sucedido. Veja abaixo:
+    - Reconhecimento facial = Verdadeiro, Senha = Falso → Acesso concedido ✅
+    - Reconhecimento facial = Falso, Senha = Verdadeiro → Acesso concedido ✅
+    - Reconhecimento facial = Verdadeiro, Senha = Verdadeiro → Acesso negado ❌
+    - Reconhecimento facial = Falso, Senha = Falso → Acesso negado ❌
+
+- OR: o usuário só pode entrar se pelo menos um dos métodos for bem-sucedido. Veja abaixo:
+    - Reconhecimento facial = Verdadeiro, Senha = Falso → Acesso concedido ✅
+    - Reconhecimento facial = Falso, Senha = Verdadeiro → Acesso concedido ✅
+    - Reconhecimento facial = Verdadeiro, Senha = Verdadeiro → Acesso concedido ✅
+    - Reconhecimento facial = Falso, Senha = Falso → Acesso negado ❌
+
+- AND: o usuário só pode entrar se os dois métodos forem bem-sucedidos. Veja abaixo:
+    - Reconhecimento facial = Verdadeiro, Senha = Falso → Acesso negado ❌
+    - Reconhecimento facial = Falso, Senha = Verdadeiro → Acesso negado ❌
+    - Reconhecimento facial = Verdadeiro, Senha = Verdadeiro → Acesso concedido ✅
+    - Reconhecimento facial = Falso, Senha = Falso → Acesso negado ❌
+
 ## Testes
 
-Para acessar a funcionalidade de teste, clique no botão:
+Para acessar a funcionalidade de teste, clique no botão destacado em vermelho:
 
 <img width=1000 src="./images/botao-teste.png" />
 
@@ -206,3 +227,5 @@ Se um teste na aba "Teste" retornar "success": false, e este mesmo cenário for 
 <img width=700 src="./images/successTrue.png" />
 
 Nesse caso, o "outputValue" exibirá o resultado do último nó processado com sucesso.
+
+
