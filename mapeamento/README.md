@@ -132,13 +132,24 @@ Exemplo:
 
 ## Configurações avançadas 
 
-Na seção de Configurações Avançadas, é possível escrever scripts JavaScript ou utilizar funções pré-definidas:
+Na seção de Configurações Avançadas, é possível utilizar funções pré-definidas, usar fórmulas de Excel ou escrever scripts JavaScript:
 
-<img width=480 src="./images/config-av.jpg" />
+<img width=480 src="./images/config-av.png" />
 
 Atualmente, as funções disponíveis são:
 - Remover caracteres especiais
 - Remover espaços iniciais e finais
+
+Para utilizar fórmulas no Excel, basta digitá-las normalmente. No entanto, em vez de referenciar células específicas, você pode usar o nome do campo correspondente.
+- Na validação, o valor do campo validado será o resultado da fórmula.
+- Na resposta, o valor da saída (outputValue) será o resultado da fórmula.
+
+No exemplo abaixo, a instrução subtrai 1 do campo Codigo, resultando na seguinte saída:
+
+<img width=680 src="./images/excel.png" />
+<img width=480 src="./images/resExcel.png" />
+
+⚠️ Importante: Atualmente, as fórmulas devem ser escritas em inglês.
 
 ### JavaScript de validação
 
@@ -227,5 +238,3 @@ Se um teste na aba "Teste" retornar "success": false, e este mesmo cenário for 
 <img width=700 src="./images/successTrue.png" />
 
 Nesse caso, o "outputValue" exibirá o resultado do último nó processado com sucesso.
-
-
