@@ -2,9 +2,9 @@
 
 ## Objetivo principal
 
-O principal objetivo do mapeamento é criar uma forma de determinar uma resposta para cada entrada, por meio de um processo de validação. Essa validação ocorre por meio da criação de regras, onde cada entrada recebe uma resposta específica.
+O mapeamento tem como principal objetivo estabelecer um método para determinar uma resposta específica para cada entrada, utilizando um processo de validação. Esse processo ocorre por meio da definição de regras, que associam cada entrada a uma resposta correspondente.
 
-Cada nó contém uma validação, que caso seja verdadeira a resposta daquele nó é retornada.
+Dessa forma, a partir de um campo, é possível gerar um ou mais campos novos.
 
 Veja o exemplo abaixo:
 
@@ -247,5 +247,3 @@ Se um teste na aba "Teste" retornar "success": false, e este mesmo cenário for 
 <img width=700 src="./images/successTrue.png" />
 
 Nesse caso, o "outputValue" exibirá o resultado do último nó processado com sucesso.
-
-
