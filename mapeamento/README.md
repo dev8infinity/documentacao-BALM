@@ -2,7 +2,7 @@
 
 ## Objetivo principal
 
-O principal objetivo do mapeamento é determinar uma resposta para cada entrada por meio de um processo de validação. Essa validação ocorre por meio da criação de regras, onde cada entrada recebe uma resposta específica.
+O principal objetivo do mapeamento é criar uma forma de determinar uma resposta para cada entrada, por meio de um processo de validação. Essa validação ocorre por meio da criação de regras, onde cada entrada recebe uma resposta específica.
 
 Cada nó contém uma validação, que caso seja verdadeira a resposta daquele nó é retornada.
 
@@ -136,11 +136,20 @@ Na seção de Configurações Avançadas, é possível utilizar funções pré-d
 
 <img width=480 src="./images/config-av.png" />
 
+Quando qualquer uma dessas opções estiver sendo utilizada, um ícone aparecerá ao lado direito do botão de configuração:
+
+<img width=580 src="./images/icones.png" />
+
+Na imagem, estão representados os ícones de script, Excel e função, respectivamente.
+### Funções
+
 Atualmente, as funções disponíveis são:
 - Remover caracteres especiais
 - Remover espaços iniciais e finais
 
-Para utilizar fórmulas no Excel, basta digitá-las normalmente. No entanto, em vez de referenciar células específicas, você pode usar o nome do campo correspondente.
+### Fórmulas de Excel
+
+Para utilizar fórmulas de Excel, basta digitá-las normalmente. No entanto, em vez de referenciar células específicas, você pode usar o nome do campo correspondente.
 - Na validação, o valor do campo validado será o resultado da fórmula.
 - Na resposta, o valor da saída (outputValue) será o resultado da fórmula.
 
@@ -238,3 +247,5 @@ Se um teste na aba "Teste" retornar "success": false, e este mesmo cenário for 
 <img width=700 src="./images/successTrue.png" />
 
 Nesse caso, o "outputValue" exibirá o resultado do último nó processado com sucesso.
+
+
